@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1020670393199",
+    "project_id": "marvel-movies-699d6",
+    "storage_bucket": "marvel-movies-699d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020670393199:android:28be220225e918d899069a",
+        "android_client_info": {
+          "package_name": "com.example.marvel_movie_directory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020670393199-3068efonhgd4u1f4rg7h8f2aq2ea3dd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiBRLZizoaqJe30njVHBAa8C28hOoLQx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020670393199-3068efonhgd4u1f4rg7h8f2aq2ea3dd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020670393199:android:71d980dedef06ab199069a",
+        "android_client_info": {
+          "package_name": "com.movies.marvel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020670393199-3068efonhgd4u1f4rg7h8f2aq2ea3dd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiBRLZizoaqJe30njVHBAa8C28hOoLQx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020670393199-3068efonhgd4u1f4rg7h8f2aq2ea3dd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
