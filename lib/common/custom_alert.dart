@@ -1,7 +1,5 @@
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:marvel_movie_directory/core/app_colors.dart';
-import 'screenUi';
-
 class CustomAlerts {
   static void showToast(String message) {
     Fluttertoast.showToast(

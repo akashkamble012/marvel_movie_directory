@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marvel_movie_directory/core/app_colors.dart';
 import 'package:marvel_movie_directory/core/styles.dart';
 
@@ -6,11 +7,15 @@ class CustomElevatedButton extends StatelessWidget {
   final void Function()? onPressed;
   final String buttonName;
   final double borderRadius;
+  final Color color;
+  final Color textColor;
   final Size size;
 
   const CustomElevatedButton({
     Key? key,
     this.onPressed,
+    this.color = AppColor.secondary,
+    this.textColor = AppColor.white,
     required this.buttonName,
     this.borderRadius = 0,
     this.size = const Size(250.0, 40.0),
@@ -22,7 +27,7 @@ class CustomElevatedButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all(size),
-        backgroundColor: MaterialStateProperty.all(AppColor.secondary),
+        backgroundColor: MaterialStateProperty.all(color),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: Styles.borderRadiusCircular12,
@@ -31,8 +36,8 @@ class CustomElevatedButton extends StatelessWidget {
       ),
       child: Text(
         buttonName,
-        style: const TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
+        style:  TextStyle(
+            fontWeight: FontWeight.bold, color: textColor, fontSize: 16.sp),
       ),
     );
   }

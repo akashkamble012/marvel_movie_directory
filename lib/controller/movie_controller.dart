@@ -17,7 +17,7 @@ class MovieController with ChangeNotifier {
 
   UpcomingMovie get upcomingMovie => _upcomingMovie;
 
-  void selectTimeAndDisplayMovie(context) async {
+  void selectTimeAndDisplayMovie(context, {bool pushReplace = false}) async {
     final DateTime? dateTime = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -45,7 +45,7 @@ class MovieController with ChangeNotifier {
       return;
     }
 
-    getUpcomingMovie(context, date: dateTime);
+    getUpcomingMovie(context, date: dateTime, pushReplace: pushReplace);
   }
 
   Future<void> getUpcomingMovie(context,
@@ -64,7 +64,6 @@ class MovieController with ChangeNotifier {
       if (statusCode >= 400) {
         Provider.of<LoadingProvider>(context, listen: false).setLoad(false);
         CustomAlerts.showToast('Something Went Wrong!');
-
         return;
       }
       _upcomingMovie = UpcomingMovie.fromMap(extractedBody);
@@ -95,4 +94,5 @@ class MovieController with ChangeNotifier {
   }) {
     getUpcomingMovie(context, date: date, pushReplace: true);
   }
+
 }
