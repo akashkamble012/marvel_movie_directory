@@ -53,23 +53,32 @@ class _MovieScreenState extends State<MovieScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  DecoratedBox(
-                    decoration: const BoxDecoration(color: AppColor.primary),
-                    child: DatePicker(
-                      widget.selectedDateTime,
-                      height: 90.h,
-                      dateTextStyle: Styles.bodyFont2,
-                      dayTextStyle: Styles.bodyFont2,
-                      monthTextStyle: Styles.bodyFont2,
-                      initialSelectedDate: widget.selectedDateTime,
-                      selectionColor: AppColor.secondary,
-                      selectedTextColor: Colors.white,
-                      onDateChange: (date) {
+                  // DecoratedBox(
+                  //   decoration: const BoxDecoration(color: AppColor.primary),
+                  //   child: DatePicker(
+                  //     widget.selectedDateTime,
+                  //     height: 90.h,
+                  //     dateTextStyle: Styles.bodyFont2,
+                  //     dayTextStyle: Styles.bodyFont2,
+                  //     monthTextStyle: Styles.bodyFont2,
+                  //     initialSelectedDate: widget.selectedDateTime,
+                  //     selectionColor: AppColor.secondary,
+                  //     selectedTextColor: Colors.white,
+                  //     onDateChange: (date) {
+                  //       Provider.of<MovieController>(context, listen: false)
+                  //           .getUpComingMovieFromDatePickerTimeLine(context,
+                  //               date: date);
+                  //     },
+                  //   ),
+                  // ),
+                  CustomElevatedButton(
+                    buttonName: 'See what\'s on other dates',
+                    color: AppColor.primary,
+                    textColor: AppColor.white,
+                    onPressed: () =>
                         Provider.of<MovieController>(context, listen: false)
-                            .getUpComingMovieFromDatePickerTimeLine(context,
-                                date: date);
-                      },
-                    ),
+                            .selectTimeAndDisplayMovie(context, pushReplace: true),
+                    size: Size(300.w, 40.h),
                   ),
                   Styles.sizedBoxH20,
                   Align(
