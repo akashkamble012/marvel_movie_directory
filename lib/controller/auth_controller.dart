@@ -75,6 +75,6 @@ class AuthController with ChangeNotifier {
   Future<void> signOut(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context)
-        .pushNamedAndRemoveUntil(signUpS, (route) => false);
+        .pushNamedAndRemoveUntil(signIN, (route) => false);
   }
 }
