@@ -11,14 +11,14 @@ import 'package:provider/provider.dart';
 
 import '../../core/styles.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   final TextEditingController _emailTextEditingController =
       TextEditingController();
@@ -63,13 +63,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Styles.sizedBoxH20,
               Styles.sizedBoxH20,
               CustomElevatedButton(
-                buttonName: 'SIGN UP',
+                buttonName: 'SIGN IN',
                 onPressed: () {
                   FocusScope.of(context).unfocus();
                   if (!_key.currentState!.validate()) {
                     return;
                   }
-                  controller.signUp(context,
+                  controller.signIn(context,
                       email: _emailTextEditingController.text.trim(),
                       password: _passwordTextEditingController.text.trim());
                 },
@@ -79,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Already have an account?',
+                    'Don\'t have an account?',
                     style: Styles.bodyFont,
                   ),
                   Styles.sizedBoxW04,
@@ -88,10 +88,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       FocusScope.of(context).unfocus();
                       _emailTextEditingController.clear();
                       _passwordTextEditingController.clear();
-                      Navigator.of(context).pushReplacementNamed(signIN);
+                      Navigator.of(context).pushReplacementNamed(signUpS);
                     },
                     child: Text(
-                      'Sign in',
+                      'Sign up',
                       style: Styles.buttonTextStyle
                           .copyWith(color: AppColor.secondary),
                     ),

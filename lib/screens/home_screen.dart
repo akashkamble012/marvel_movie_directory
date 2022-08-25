@@ -15,53 +15,50 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'When is the next Marvel Comic Universe film?',
-            textAlign: TextAlign.center,
-            style: Styles.headingFont1,
-          ),
-          Styles.sizedBoxH20,
-          CustomElevatedButton(
-            buttonName: 'Choose date to find out',
-            onPressed: () =>
-                Provider.of<MovieController>(context, listen: false)
-                    .selectTimeAndDisplayMovie(context),
-            size: Size(300.w, 40.h),
-          ),
-          Styles.sizedBoxH20,
-          Styles.sizedBoxH20,
-          GestureDetector(
-            onTap: () async {
-              Provider.of<LoadingProvider>(context, listen: false)
-                  .setLoad(true);
-              await Provider.of<AuthController>(context, listen: false)
-                  .signOut(context);
-              Provider.of<LoadingProvider>(context, listen: false)
-                  .setLoad(false);
-            },
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.logout,
-                  size: 30.w,
-                  color: AppColor.white,
-                ),
-                Text(
-                  'Sign Out',
-                  style: Styles.bodyFont2,
-                )
-              ],
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'When is the next Marvel Comic Universe film?',
+              textAlign: TextAlign.center,
+              style: Styles.headingFont1,
             ),
-          )
-        ],
-      ),
-    ));
+            Styles.sizedBoxH20,
+            CustomElevatedButton(
+              buttonName: 'Choose date to find out',
+              onPressed: () =>
+                  Provider.of<MovieController>(context, listen: false)
+                      .selectTimeAndDisplayMovie(context),
+              size: Size(300.w, 40.h),
+            ),
+            Styles.sizedBoxH20,
+            Styles.sizedBoxH20,
+            GestureDetector(
+              onTap: () async {
+                Provider.of<LoadingProvider>(context, listen: false)
+                    .setLoad(true);
+                await Provider.of<AuthController>(context, listen: false)
+                    .signOut(context);
+                Provider.of<LoadingProvider>(context, listen: false)
+                    .setLoad(false);
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.logout,
+                    size: 30.w,
+                    color: AppColor.white,
+                  ),
+                  Text(
+                    'Sign Out',
+                    style: Styles.bodyFont2,
+                  )
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
